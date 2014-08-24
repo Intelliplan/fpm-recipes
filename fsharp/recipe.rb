@@ -3,7 +3,7 @@ class FSharp < FPM::Cookery::Recipe
   homepage 'https://github.com/fsharp/fsharp'
 
   name 'fsharp'
-  version '3.1.1.19'
+  version '3.1.1.25'
   revision 1
   arch 'x86_64'
   section 'runtimes'
@@ -11,7 +11,7 @@ class FSharp < FPM::Cookery::Recipe
   # 3.0.31-4-gc8843c2:
   source 'https://github.com/fsharp/fsharp',
     :with => :git,
-    :tag => '3.1.1.19'
+    :tag => '3.1.1.25'
 
   depends 'mono'
 
