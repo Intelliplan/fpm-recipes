@@ -175,7 +175,7 @@ namespace :rpm do
   def packagecloud_upload package,
                           user = 'haf',
                           repo = 'oss',
-                          distro_id = 27,
+                          distro_id = 27, # 7.0 => 140
                           key = ENV['PACKAGECLOUD_KEY']
     system 'curl', %W|-X POST https://#{key}:@packagecloud.io/api/v1/repos/#{user}/#{repo}/packages.json
                       -F package[distro_version_id]=#{distro_id}
@@ -188,6 +188,7 @@ namespace :rpm do
     next if ENV['SKIP_PACKAGECLOUD']
     pkg = FileList["#{args[:proj]}/pkg/*.{rpm}"].sort.first
     raise "Build of package '#{args[:proj]}' didn't produce an RPM, exiting" unless pkg
-    packagecloud_upload pkg
+    packagecloud_upload pkg unless ENV['NOT_CENTOS6']# for CentOS 6
+    packagecloud_upload pkg, 'haf', 'oss', 140 unless ENV['NOT_CENTOS7'] # for CentOS 7
   end
 end
