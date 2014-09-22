@@ -3,15 +3,15 @@ class Mono < FPM::Cookery::Recipe
   description 'Mono is a portable and open source implementation of the .NET framework for Unix, Windows, MacOS and other operating systems'
   homepage   'http://www.mono-project.com'
 
-  name       'mono'
-  version    '3.6.0'
-  revision   1
-  arch       'x86_64'
-  section    'runtimes'
+  name         'mono'
+  version      '3.8.1'
+  revision     1
+  arch         'x86_64'
+  section      'runtimes'
 
-  source     "https://github.com/mono/mono.git",
-    :with => 'git',
-    :tag  => 'mono-3.6.0.39',
+  source       'https://github.com/mono/mono.git',
+    :with      => 'git',
+    :tag       => 'mono-3.8.0.9',
     :submodule => true
   
   maintainer 'Henrik Feldt <henrik@haf.se>'
