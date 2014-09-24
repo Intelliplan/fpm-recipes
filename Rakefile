@@ -191,4 +191,6 @@ namespace :rpm do
     packagecloud_upload pkg unless ENV['NOT_CENTOS6']# for CentOS 6
     packagecloud_upload pkg, 'haf', 'oss', 140 unless ENV['NOT_CENTOS7'] # for CentOS 7
   end
+
+  # manual: bundle exec rake PACKAGECLOUD_KEY=$PACKAGECLOUD_KEY NOT_CENTOS6=true 'rpm:update_packagecloud[eventstore]'
 end
