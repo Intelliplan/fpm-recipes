@@ -6,7 +6,7 @@ task :default do
     -t             rpm
     -C             tmp-build
     --architecture noarch
-    --version      2.0.1
+    --version      3.0.0
     --category     databases
     --depends      mono
     --maintainer   developer@intelliplan.se
