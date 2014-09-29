@@ -3,13 +3,13 @@ class TeamcityServer < FPM::Cookery::Recipe
   homepage    'http://devnet.jetbrains.com/community/teamcity'
 
   name        'teamcity-server'
-  version     '8.1.4'
+  version     '8.1.5'
   revision    1
   arch        'x86_64'
   section     'ci'
 
   source      "http://download-cf.jetbrains.com/teamcity/TeamCity-#{version}.tar.gz"
-  sha1        'f7208b808714e6f7d0ee6fe9b551cb306078be64'
+  sha1        '50c4f6a7bf6e06eb38326be29fcc9f76a483df1a'
 
   maintainer  'Henrik Feldt <henrik@haf.se>'
 
