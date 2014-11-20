@@ -4,7 +4,7 @@ class Mono < FPM::Cookery::Recipe
   homepage   'http://www.mono-project.com'
 
   name         'mono'
-  version      '3.8.1'
+  version      '3.12.0'
   revision     1
   arch         'x86_64'
   section      'runtimes'
