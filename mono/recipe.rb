@@ -11,9 +11,9 @@ class Mono < FPM::Cookery::Recipe
 
   source       'https://github.com/mono/mono.git',
     :with      => 'git',
-    :tag       => 'mono-3.8.0.9',
+    :sha       => 'd457bae593082068361df5208fbc7c9d96ec9b52',
     :submodule => true
-  
+
   maintainer 'Henrik Feldt <henrik@haf.se>'
 
   depends    'libgdiplus'
