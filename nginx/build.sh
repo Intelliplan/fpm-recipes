@@ -2,8 +2,8 @@
 set -e
 description='a high performance web server and a reverse proxy server'
 name='nginx'
-version='1.5.12'
-revision='3'
+version='1.9.0'
+revision='1'
 homepage='http://nginx.org/'
 source="http://nginx.org/download/nginx-${version}.tar.gz"
 section='System Environment/Daemons'
@@ -12,13 +12,10 @@ function download_and_extract {
 	curl -sSL $1 | tar -C $2 --strip-components=1 -xzf -
 }
 rm -rf build
-mkdir -p build/{nginx,upstream_hash,install}
+mkdir -p build/{nginx,install}
 
 ## build
 download_and_extract "http://nginx.org/download/nginx-${version}.tar.gz" build/nginx
-download_and_extract https://github.com/evanmiller/nginx_upstream_hash/archive/d244537631f5a90891d412047bc6ea8c707402a7.tar.gz build/upstream_hash
-sha1sum -c nginx.sums
-sha1sum -c upstream_hash.sums
 (cd build/nginx
 	./configure \
 		--with-http_gzip_static_module \
@@ -30,7 +27,6 @@ sha1sum -c upstream_hash.sums
 		--without-http_scgi_module \
 		--without-http_uwsgi_module \
 		--with-http_auth_request_module \
-		--add-module=../upstream_hash \
 		--prefix=/usr \
 		--user=nginx \
 		--group=nginx \
